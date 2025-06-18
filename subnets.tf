@@ -32,6 +32,16 @@ resource "aws_subnet" "public_1b" {
   )
 }
 
+resource "aws_route_table_association" "rtb_assoc_1a" {
+  subnet_id      = aws_subnet.public_1a.id
+  route_table_id = aws_route_table.igw-rt.id
+}
+
+resource "aws_route_table_association" "rtb_assoc_1b" {
+  subnet_id      = aws_subnet.public_1b.id
+  route_table_id = aws_route_table.igw-rt.id
+}
+
 # Private Subnets -------------------------------------------------------------------
 
 resource "aws_subnet" "private_1a" {
