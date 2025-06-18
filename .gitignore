@@ -38,3 +38,4 @@ terraform.rc
 
 # Novo arquivo
 .terraform.lock.hcl
+*.tfvars
