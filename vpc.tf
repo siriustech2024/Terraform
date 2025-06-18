@@ -1,4 +1,4 @@
-resource "aws_vpc" "eks" {
+resource "aws_vpc" "eks-vpc" {
   cidr_block           = var.cidr_block
   instance_tenancy     = "default"
   enable_dns_support   = true
@@ -7,7 +7,7 @@ resource "aws_vpc" "eks" {
   tags = merge(
     local.tags,
     {
-      Name = "eks"
+      Name = "eks-vpc"
     }
   )
 }
