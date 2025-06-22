@@ -9,7 +9,7 @@ resource "aws_subnet" "public_1a" {
   map_public_ip_on_launch = true
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                     = "public-1a"
       "kubernetes.io/role/elb" = 1
@@ -24,7 +24,7 @@ resource "aws_subnet" "public_1b" {
   map_public_ip_on_launch = true
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                     = "public-1b"
       "kubernetes.io/role/elb" = 1
@@ -50,7 +50,7 @@ resource "aws_subnet" "private_1a" {
   availability_zone = "${var.region}a"
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "private-1a"
       "kubernetes.io/role/internal-elb" = 1
@@ -64,7 +64,7 @@ resource "aws_subnet" "private_1b" {
   availability_zone = "${var.region}b"
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "private-1b"
       "kubernetes.io/role/internal-elb" = 1
