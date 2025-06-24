@@ -23,3 +23,6 @@ Sem ele, o Terraform não sabe o que já existe e pode tentar criar tudo de novo
 
 4. Controlar o ciclo de vida da infraestrutura
 Contém IDs, atributos, relacionamentos e metadados dos recursos provisionados.
+
+# Terraform tfvars
+Para evitar que o Terraform pergunte o valor para as variáveis definidas em variables.tf, podemos usar um arquivo com o valor de todas as variáveis chamado `terraform.tfvars`. Esse arquivo não deve ser versionado, pois pode variar de implementação para implementação.
