@@ -1,3 +1,7 @@
+# Refs
+ - https://docs.aws.amazon.com/eks/latest/userguide
+ - https://registry.terraform.io/providers/hashicorp/aws/latest/docs
+
 # Terraform
  - Um único binário Go
  - Escrever em HCL um ou vários arquivos com a extensão .tf
