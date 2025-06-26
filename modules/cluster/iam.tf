@@ -1,8 +1,6 @@
 resource "aws_iam_role" "eks_cluster_role" {
   name = "${var.project}-cluster-role"
 
-  # Terraform's "jsonencode" function converts a
-  # Terraform expression result to valid JSON syntax.
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -23,4 +21,9 @@ resource "aws_iam_role" "eks_cluster_role" {
       Name = "${var.project}-cluster-role"
     }
   )
+}
+
+resource "aws_iam_role_policy_attachment" "eks_cluster_role_attach" {
+  role       = aws_iam_role.eks_cluster_role.name
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
